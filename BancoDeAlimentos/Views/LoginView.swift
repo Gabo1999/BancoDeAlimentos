@@ -75,25 +75,31 @@ struct LoginView: View {
                         .cornerRadius(8)
                         .background(Color.green)
                 })
-                Spacer()
-                Button(action: {
-                    loginModel.googleSignIn { success in
-                        authentication.updateValidation(success: success)
-                    }
-                }, label: {
-                    Text("Ingresar con Google")
-                        .foregroundColor(Color.white)
-                        .frame(width: 200, height: 50)
-                        .cornerRadius(8)
-                        .background(Color.green)
-                })
-                Button(action: {
-                    loginModel.facebookLogIn { success in
-                        authentication.updateValidation(success: success)
-                    }
-                }, label: {
-                    Text("Continue with Facebook")
-                })
+                .padding()
+                HStack{
+                    Button(action: {
+                        loginModel.googleSignIn { success in
+                            authentication.updateValidation(success: success)
+                        }
+                    }, label: {
+                        Text("Ingresar con Google")
+                            .foregroundColor(Color.white)
+                            .frame(width: 200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.green)
+                    })
+                    Button(action: {
+                        loginModel.facebookLogIn { success in
+                            authentication.updateValidation(success: success)
+                        }
+                    }, label: {
+                        Text("Continue with Facebook")
+                            .foregroundColor(Color.white)
+                            .frame(width: 200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.green)
+                    })
+                }
 //                LoginFacebookButton().frame(width: 100, height: 50, alignment: .center)
 //                    .environmentObject(authentication)
 //                    .environmentObject(loginModel)

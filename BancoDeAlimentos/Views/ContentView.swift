@@ -14,12 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("AUTORIZADO")
-                    .font(.largeTitle)
-                if loginModel.showLogOutProgressView {
-                    ProgressView()
-                }
+            TabView {
+                DonationsView()
+                    .tabItem {
+                        Label("Donations", systemImage: "bitcoinsign.circle.fill")
+                    }
+                GameView()
+                    .tabItem {
+                        Label("Game", systemImage: "gamecontroller.fill")
+                    }
+                RankingView()
+                    .tabItem {
+                        Label("Ranking", systemImage: "rosette.star")
+                    }
             }
             .padding()
             .navigationTitle("Banco de Alimentos")
@@ -33,6 +40,7 @@ struct ContentView: View {
                     }
                 }
             }
+            
         }
     }
 }
