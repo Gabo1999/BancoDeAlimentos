@@ -79,4 +79,19 @@ class LoginModel: ObservableObject {
             }
         }
     }
+    
+    func facebookLogIn(completion: @escaping (Bool) -> Void) {
+        showProgressView = true
+        APIService.shared.facebookLogIn() { [unowned self] (result: Result<Bool, Authentication.AuthenticationError>) in
+            showProgressView = false
+            switch result {
+            case .success:
+                completion(true)
+            case .failure(let authError):
+                error = authError
+                completion(false)
+            }
+        }
+    }
+    
 }

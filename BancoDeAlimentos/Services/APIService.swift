@@ -9,10 +9,12 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import FBSDKLoginKit
 
 class APIService {
     let auth = Auth.auth()
     static let shared = APIService()
+    @State var manager = LoginManager()
     enum APIError: Error {
         case error
     }
@@ -65,6 +67,36 @@ class APIService {
     func logOut(completion: @escaping (Result<Bool, Authentication.SignUpError>) -> Void) {
         try? auth.signOut()
         completion(.success(true))
+    }
+    
+    func facebookLogIn(completion: @escaping (Result<Bool, Authentication.AuthenticationError>) -> Void){
+        
+        manager.logIn(permissions: [], from: nil) { (result, err) in
+            if err != nil {
+                print(err!.localizedDescription)
+                DispatchQueue.main.async {
+                    completion(.success(false))
+                }
+                return
+            }
+            
+            if !result!.isCancelled {
+                if AccessToken.current != nil {
+                    let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                    self.auth.signIn(with: credential) { (res, err) in
+                        if err != nil {
+                            print((err?.localizedDescription)!)
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            completion(.success(true))
+                        }
+
+                        print("Success")
+                    }
+                }
+            }
+        }
     }
     
     func googleSignIn(completion: @escaping (Result<Bool, Authentication.AuthenticationError>) -> Void) {

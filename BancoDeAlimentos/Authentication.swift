@@ -9,6 +9,7 @@ import SwiftUI
 
 class Authentication: ObservableObject {
     @Published var isValidated = false
+    static let shared = Authentication()
     
     var isSignedIn: Bool {
         return APIService.shared.auth.currentUser != nil

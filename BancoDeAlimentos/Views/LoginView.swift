@@ -6,6 +6,47 @@
 //
 
 import SwiftUI
+import Firebase
+import FBSDKLoginKit
+
+//struct LoginFacebookButton: UIViewRepresentable {
+//
+//    @EnvironmentObject var authentication: Authentication
+//    @EnvironmentObject var loginModel: LoginModel
+//    @State var isValidated = false
+//
+//    func makeCoordinator() -> Coordinator {
+//        return LoginFacebookButton.Coordinator()
+//    }
+//
+//    func makeUIView(context: UIViewRepresentableContext<LoginFacebookButton>) -> FBLoginButton {
+//        let button = FBLoginButton()
+//        button.delegate = context.coordinator
+//        return button
+//    }
+//
+//    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<LoginFacebookButton>) {
+//
+//    }
+//
+//    class Coordinator: NSObject, LoginButtonDelegate {
+//
+//        func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+//            if error != nil {
+//                print((error?.localizedDescription)!)
+//                return
+//            }
+//            APIService.shared.facebookLogIn()
+//        }
+//
+//        func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+//            try!APIService.shared.auth.signOut()
+//        }
+//
+//
+//    }
+//}
+
 
 struct LoginView: View {
     
@@ -46,6 +87,16 @@ struct LoginView: View {
                         .cornerRadius(8)
                         .background(Color.green)
                 })
+                Button(action: {
+                    loginModel.facebookLogIn { success in
+                        authentication.updateValidation(success: success)
+                    }
+                }, label: {
+                    Text("Continue with Facebook")
+                })
+//                LoginFacebookButton().frame(width: 100, height: 50, alignment: .center)
+//                    .environmentObject(authentication)
+//                    .environmentObject(loginModel)
                 //Image("Launch Screen")
                 //    .onTapGesture {
                 //        UIApplication.shared.endEditing()
