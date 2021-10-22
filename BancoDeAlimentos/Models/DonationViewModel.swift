@@ -18,7 +18,7 @@ class DonationViewModel: ObservableObject {
     }
     
     func getAllDonations() {
-        db.collection("Donations").order(by: "date").addSnapshotListener { (snap, error) in
+        db.collection("Donations").whereField("user", isEqualTo: APIService.shared.auth.currentUser?.uid ?? "").order(by: "date").addSnapshotListener { (snap, error) in
             guard let docs = snap?.documents else {
                 self.noDonations = true
                 print("Error fetching document: \(error!)")
@@ -27,6 +27,7 @@ class DonationViewModel: ObservableObject {
             
             if docs.count == 0 {
                 self.noDonations = true
+                print("Nothing")
                 return
             }
             

@@ -12,36 +12,56 @@ struct ContentView: View {
     @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var loginModel: LoginModel
     
+    init() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
+        navBarAppearance.backgroundColor = UIColor.orange
+        navBarAppearance.shadowColor = UIColor.black
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().tintColor = UIColor.systemBackground
+    }
+    
     var body: some View {
-        NavigationView {
-            TabView {
+        TabView {
+            NavigationView {
                 DonationsView()
-                    .tabItem {
-                        Label("Donations", systemImage: "bitcoinsign.circle.fill")
-                    }
-                GameView()
-                    .tabItem {
-                        Label("Game", systemImage: "gamecontroller.fill")
-                    }
-                RankingView()
-                    .tabItem {
-                        Label("Ranking", systemImage: "rosette.star")
-                    }
-            }
-            .padding()
-            .navigationTitle("Banco de Alimentos")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Salir") {
-                        loginModel.signOut { result in
-                            print(result)
-                            authentication.updateValidation(success: !result)
+                .navigationBarTitle("Donaciones")
+                .toolbar {
+//                    ToolbarItem(placement: .navigationBarLeading) {
+//                        Text("Donaciones")
+//                            .font(.largeTitle)
+//                            .fontWeight(.heavy)
+//                            .foregroundColor(.black)
+//                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Salir") {
+                            loginModel.signOut { result in
+                                print(result)
+                                authentication.updateValidation(success: !result)
+                            }
                         }
                     }
                 }
             }
-            
+            .tabItem {
+                Label("Donations", systemImage: "bitcoinsign.circle.fill")
+            }
+            GameView()
+                .tabItem {
+                    Label("Game", systemImage: "gamecontroller.fill")
+                }
+            RankingView()
+                .tabItem {
+                    Label("Ranking", systemImage: "rosette")
+                }
         }
+        .accentColor(.orange)
+//            .background(Color(.green).ignoresSafeArea(.all, edges: .all))
+//            .ignoresSafeArea(.all, edges: .top)
+//            .navigationBarTitle("Alimentos")
     }
 }
 

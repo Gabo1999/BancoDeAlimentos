@@ -15,6 +15,7 @@ struct DonationModel: Identifiable, Codable {
     var picture: String
     var date: Date
     var points: Int
+    var user: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,9 +23,10 @@ struct DonationModel: Identifiable, Codable {
         case picture
         case date
         case points
+        case user
     }
 }
 
 extension DonationModel {
-    static let dummy = DonationModel(title: "Donación 1", picture: "picture", date: Date(), points: 15)
+    static let dummy = DonationModel(title: "Donación 1", picture: "picture", date: Date(), points: 15, user: "EEEDD")
 }

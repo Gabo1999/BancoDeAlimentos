@@ -12,21 +12,26 @@ struct DonationRow: View {
     
     var donation: DonationModel
     
+    var dateFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MMM/yyyy"
+        return formatter
+    }
+    
     var body: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 10) {
+        VStack {
+            HStack {
                 Text(donation.title)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
+                Spacer(minLength: 0)
                 Menu(content: {
                     Text("Edit")
                     
                 }, label: {
-                    Image("menu")
+                    Image(systemName: "ellipsis")
                         .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 18, height: 18)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 })
             }
             if donation.picture != "" {
@@ -37,15 +42,17 @@ struct DonationRow: View {
                     .cornerRadius(15)
             }
             HStack {
-                Text("Points: \(donation.points)")
+                Text("Puntos: \(donation.points)")
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
+                    .foregroundColor(.black)
+                Spacer(minLength: 0)
+                Text("Fecha de donación: \(dateFormat.string(from: donation.date))")
                 Spacer(minLength: 0)
             }
+            Spacer()
         }
-        .padding()
-        .background(Color.white.opacity(0.06))
+        .padding(10)
+        .background(Color.orange.opacity(0.2))
         .cornerRadius(15)
     }
 }

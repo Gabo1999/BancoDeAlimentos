@@ -12,44 +12,46 @@ struct DonationsView: View {
     @StateObject var donationsData = DonationViewModel()
     var body: some View {
         VStack {
-            HStack {
-                Text("Donaciones")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                Spacer()
-                Button(action: {
-                    print("something")
-                }, label: {
-                    Image(systemName: "plus.circle")
-                        .font(.title)
-                        .foregroundColor(Color("blue"))
-                })
-            }
-            .padding()
-            .padding(.top, edges!.top)
-            .background(Color("bg"))
-            .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
+//                HStack {
+//                    Text("Donaciones")
+//                        .font(.largeTitle)
+//                        .fontWeight(.heavy)
+//                        .foregroundColor(.black)
+//                    Spacer(minLength: 0)
+//                    Button(action: {
+//                        print("something")
+//                    }, label: {
+//                        Image(systemName: "plus.circle")
+//                            .font(.title)
+//                            .foregroundColor(Color(.black))
+//                    })
+//                }
+//                .padding()
+//                .padding(.top,edges!.top)
+//                .background(Color(.green))
+//                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+            //.ignoresSafeArea(.all, edges: .top)
             
             if donationsData.donations.isEmpty {
-                Spacer()
+                Spacer(minLength: 0)
                 if donationsData.noDonations {
                     Text("No hay nuevas donaciones")
                 } else {
                     ProgressView()
                 }
-                Spacer()
+                Spacer(minLength: 0)
             } else {
                 ScrollView {
-                    VStack(spacing: 15) {
+                    VStack {
                         ForEach(donationsData.donations) { donation in
                             DonationRow(donation: donation)
-                            
                         }
+                        .padding(.bottom, 10)
                     }
                     .padding()
                 }
             }
+            Spacer()
         }
     }
 }
