@@ -39,6 +39,16 @@ struct DonationsView: View {
                     ProgressView()
                 }
                 Spacer()
+            } else {
+                ScrollView {
+                    VStack(spacing: 15) {
+                        ForEach(donationsData.donations) { donation in
+                            DonationRow(donation: donation)
+                            
+                        }
+                    }
+                    .padding()
+                }
             }
         }
     }

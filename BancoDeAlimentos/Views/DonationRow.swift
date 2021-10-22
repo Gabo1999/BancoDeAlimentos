@@ -10,7 +10,7 @@ import Kingfisher
 
 struct DonationRow: View {
     
-    @ObservedObject var donation: DonationModel
+    var donation: DonationModel
     
     var body: some View {
         VStack(spacing: 10) {
@@ -52,6 +52,6 @@ struct DonationRow: View {
 
 struct DonationRow_Previews: PreviewProvider {
     static var previews: some View {
-        DonationRow(donation: DonationModel(from: <#Decoder#>))
+        DonationRow(donation: DonationModel.dummy)
     }
 }

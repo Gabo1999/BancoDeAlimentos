@@ -24,3 +24,7 @@ struct DonationModel: Identifiable, Codable {
         case points
     }
 }
+
+extension DonationModel {
+    static let dummy = DonationModel(title: "Donación 1", picture: "picture", date: Date(), points: 15)
+}
