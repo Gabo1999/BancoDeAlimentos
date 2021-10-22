@@ -35,6 +35,7 @@
 		87B14C00272102C900752510 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BFF272102C900752510 /* FacebookAEM */; };
 		87B14C032721030000752510 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C022721030000752510 /* FacebookCore */; };
 		87B14C062721031300752510 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C052721031300752510 /* FacebookBasics */; };
+		87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		873FD4712721D36B001EBEA5 /* DonationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationModel.swift; sourceTree = "<group>"; };
 		873FD4742721D41F001EBEA5 /* DonationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModel.swift; sourceTree = "<group>"; };
 		873FD47A2721DC18001EBEA5 /* DonationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRow.swift; sourceTree = "<group>"; };
+		87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDonationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				873FD46B2721CEF0001EBEA5 /* DonationsView.swift */,
 				873FD46E2721CEFB001EBEA5 /* RankingView.swift */,
 				873FD47A2721DC18001EBEA5 /* DonationRow.swift */,
+				87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870E673F27190BB00052C01E /* LoginModel.swift in Sources */,
+				87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */,
 				873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */,
 				870E674327190D780052C01E /* LoginView.swift in Sources */,
 				870E673327190A070052C01E /* Credentials.swift in Sources */,

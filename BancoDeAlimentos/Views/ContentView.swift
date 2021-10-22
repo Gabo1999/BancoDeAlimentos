@@ -36,6 +36,13 @@ struct ContentView: View {
 //                            .fontWeight(.heavy)
 //                            .foregroundColor(.black)
 //                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink(destination: NewDonationView()) {
+                            Image(systemName: "plus.circle")
+                                .font(.title)
+                                .foregroundColor(Color(.black))
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Salir") {
                             loginModel.signOut { result in

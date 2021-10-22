@@ -73,7 +73,7 @@ struct LoginView: View {
                         .foregroundColor(Color.white)
                         .frame(width: 200, height: 50)
                         .cornerRadius(8)
-                        .background(Color.green)
+                        .background(Color.orange)
                 })
                 .padding()
                 HStack{
@@ -86,7 +86,7 @@ struct LoginView: View {
                             .foregroundColor(Color.white)
                             .frame(width: 200, height: 50)
                             .cornerRadius(8)
-                            .background(Color.green)
+                            .background(Color.orange)
                     })
                     Button(action: {
                         loginModel.facebookLogIn { success in
