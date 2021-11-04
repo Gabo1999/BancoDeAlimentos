@@ -31,11 +31,13 @@
 		873FD4782721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 873FD4772721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta */; };
 		873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD47A2721DC18001EBEA5 /* DonationRow.swift */; };
 		873FD47F2721DEAB001EBEA5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 873FD47E2721DEAB001EBEA5 /* Kingfisher */; };
+		8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793C9E32733A4E8005B6A64 /* ImagePicker.swift */; };
 		87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BF72720F6F900752510 /* FacebookLogin */; };
 		87B14C00272102C900752510 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BFF272102C900752510 /* FacebookAEM */; };
 		87B14C032721030000752510 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C022721030000752510 /* FacebookCore */; };
 		87B14C062721031300752510 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C052721031300752510 /* FacebookBasics */; };
 		87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */; };
+		F1F9CE813DF5E8ECAF3EE4E4 /* Pods_BancoDeAlimentos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +61,11 @@
 		873FD4712721D36B001EBEA5 /* DonationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationModel.swift; sourceTree = "<group>"; };
 		873FD4742721D41F001EBEA5 /* DonationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModel.swift; sourceTree = "<group>"; };
 		873FD47A2721DC18001EBEA5 /* DonationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRow.swift; sourceTree = "<group>"; };
+		8793C9E32733A4E8005B6A64 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDonationView.swift; sourceTree = "<group>"; };
+		8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.release.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.release.xcconfig"; sourceTree = "<group>"; };
+		AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.debug.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.debug.xcconfig"; sourceTree = "<group>"; };
+		C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BancoDeAlimentos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				873FD4782721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				870E674E271927CE0052C01E /* FirebaseAuth in Frameworks */,
 				870E6750271927CE0052C01E /* FirebaseFirestore in Frameworks */,
+				F1F9CE813DF5E8ECAF3EE4E4 /* Pods_BancoDeAlimentos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +96,7 @@
 				870E671F2719061C0052C01E /* BancoDeAlimentos */,
 				870E671E2719061C0052C01E /* Products */,
 				87B14BFE272102C800752510 /* Frameworks */,
+				9BF1CBE2685BF571DF0B55F6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +120,7 @@
 				870E67262719061C0052C01E /* Preview Content */,
 				870E674627190F570052C01E /* Authentication.swift */,
 				870E6749271925C50052C01E /* GoogleService-Info.plist */,
+				8793C9E32733A4E8005B6A64 /* ImagePicker.swift */,
 			);
 			path = BancoDeAlimentos;
 			sourceTree = "<group>";
@@ -162,8 +171,18 @@
 		87B14BFE272102C800752510 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BF1CBE2685BF571DF0B55F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */,
+				8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 870E672C2719061C0052C01E /* Build configuration list for PBXNativeTarget "BancoDeAlimentos" */;
 			buildPhases = (
+				13D795562B6B72AE23AF07BB /* [CP] Check Pods Manifest.lock */,
 				870E67192719061C0052C01E /* Sources */,
 				870E671A2719061C0052C01E /* Frameworks */,
 				870E671B2719061C0052C01E /* Resources */,
+				B2B519C94AD6F7D7DED10B2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +271,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13D795562B6B72AE23AF07BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BancoDeAlimentos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B519C94AD6F7D7DED10B2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		870E67192719061C0052C01E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +321,7 @@
 				870E673F27190BB00052C01E /* LoginModel.swift in Sources */,
 				87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */,
 				873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */,
+				8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */,
 				870E674327190D780052C01E /* LoginView.swift in Sources */,
 				870E673327190A070052C01E /* Credentials.swift in Sources */,
 				873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */,
@@ -395,6 +459,7 @@
 		};
 		870E672D2719061C0052C01E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,6 +487,7 @@
 		};
 		870E672E2719061C0052C01E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

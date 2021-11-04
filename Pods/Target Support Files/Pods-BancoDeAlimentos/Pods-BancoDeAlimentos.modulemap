@@ -1,0 +1,6 @@
+framework module Pods_BancoDeAlimentos {
+  umbrella header "Pods-BancoDeAlimentos-umbrella.h"
+
+  export *
+  module * { export * }
+}
