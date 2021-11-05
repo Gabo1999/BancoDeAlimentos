@@ -9,6 +9,7 @@ import SwiftUI
 import CoreImage.CIFilterBuiltins
 import MLKitBarcodeScanning
 import MLKitVision
+import CodeScanner
 
 struct NewDonationView: View {
     
@@ -18,8 +19,11 @@ struct NewDonationView: View {
     
     // Analyzing image
     @State private var rawData: String = ""
-    @State var showingImagePicker = false
-    @State var type: UIImagePickerController.SourceType = .photoLibrary
+    @State private var points: String = ""
+    @State private var qrId: String = ""
+    @State private var showingImagePicker = false
+    //@State private var showingScanner = false
+    @State var type: UIImagePickerController.SourceType = .camera
     @State var data: Data = .init(count: 0)
     @State private var inputImage: UIImage?
     @State private var image: Image?
@@ -45,6 +49,12 @@ struct NewDonationView: View {
             if rawData != "" {
                 Text(rawData)
             }
+            if qrId != "" {
+                Text(qrId)
+            }
+            if points != "" {
+                Text(points)
+            }
             HStack {
                 Button(action: {
                     self.type = .photoLibrary
@@ -62,7 +72,27 @@ struct NewDonationView: View {
         }
         .navigationBarTitle("Nueva Donación")
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
+            if type == .photoLibrary {
+                ImagePicker(image: self.$inputImage)
+            } else {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "sdflkajsñdfljdhz\n70", completion: self.handleScan)
+            }
+        }
+    }
+    
+    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        self.showingImagePicker = false
+        
+        switch result {
+        case .success(let code):
+            let details = code.components(separatedBy: "\n")
+            guard details.count == 2 else { return }
+            
+            qrId = details[0]
+            points = details[1]
+        case .failure(let error):
+            print("Scanning failed:")
+            print(error)
         }
     }
     

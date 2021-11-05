@@ -55,6 +55,7 @@ class APIService {
                 DispatchQueue.main.async {
                     completion(.failure(.invalidEmail))
                 }
+                print(error ?? "Something")
                 return
             }
             

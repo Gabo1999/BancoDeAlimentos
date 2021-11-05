@@ -23,6 +23,7 @@
 		870E6752271927CE0052C01E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 870E6751271927CE0052C01E /* FirebaseDatabase */; };
 		870E6755271942FA0052C01E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E6754271942FA0052C01E /* SignUpView.swift */; };
 		870E675927195C650052C01E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 870E675827195C650052C01E /* GoogleSignIn */; };
+		87134DBF2734F786007FC123 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 87134DBE2734F786007FC123 /* CodeScanner */; };
 		873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4682721CEDD001EBEA5 /* GameView.swift */; };
 		873FD46C2721CEF0001EBEA5 /* DonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD46B2721CEF0001EBEA5 /* DonationsView.swift */; };
 		873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD46E2721CEFB001EBEA5 /* RankingView.swift */; };
@@ -81,6 +82,7 @@
 				870E675927195C650052C01E /* GoogleSignIn in Frameworks */,
 				87B14C062721031300752510 /* FacebookBasics in Frameworks */,
 				873FD4782721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				87134DBF2734F786007FC123 /* CodeScanner in Frameworks */,
 				870E674E271927CE0052C01E /* FirebaseAuth in Frameworks */,
 				870E6750271927CE0052C01E /* FirebaseFirestore in Frameworks */,
 				F1F9CE813DF5E8ECAF3EE4E4 /* Pods_BancoDeAlimentos.framework in Frameworks */,
@@ -214,6 +216,7 @@
 				87B14C052721031300752510 /* FacebookBasics */,
 				873FD4772721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta */,
 				873FD47E2721DEAB001EBEA5 /* Kingfisher */,
+				87134DBE2734F786007FC123 /* CodeScanner */,
 			);
 			productName = BancoDeAlimentos;
 			productReference = 870E671D2719061C0052C01E /* BancoDeAlimentos.app */;
@@ -248,6 +251,7 @@
 				870E675727195C650052C01E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				87B14BF62720F6F900752510 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 870E671E2719061C0052C01E /* Products */;
 			projectDirPath = "";
@@ -552,6 +556,14 @@
 				minimumVersion = 6.0.2;
 			};
 		};
+		87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 		873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -590,6 +602,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 870E675727195C650052C01E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		87134DBE2734F786007FC123 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 		873FD4772721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;

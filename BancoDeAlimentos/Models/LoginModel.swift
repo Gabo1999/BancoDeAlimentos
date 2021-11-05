@@ -46,6 +46,7 @@ class LoginModel: ObservableObject {
             case .success:
                 completion(true)
             case .failure(let authError):
+                print("Failure")
                 credentials = Credentials()
                 signUpError = authError
                 completion(false)
