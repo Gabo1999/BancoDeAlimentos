@@ -50,7 +50,7 @@ class APIService {
     }
     
     func signUp(credentials: Credentials, completion: @escaping (Result<Bool, Authentication.SignUpError>) -> Void) {
-        auth.createUser(withEmail: credentials.email, password: credentials.password) { result, error in
+        auth.createUser(withEmail: credentials.email, password: credentials.password) { [self] result, error in
             guard result != nil, error == nil else {
                 DispatchQueue.main.async {
                     completion(.failure(.invalidEmail))
@@ -59,8 +59,12 @@ class APIService {
                 return
             }
             
-            DispatchQueue.main.async {
-                completion(.success(true))
+            createUserDocument(id: result!.user.uid) { result in
+                DispatchQueue.main.async {
+                    completion(.success(true))
+                }
+
+                print("Success")
             }
         }
     }
@@ -84,16 +88,19 @@ class APIService {
             if !result!.isCancelled {
                 if AccessToken.current != nil {
                     let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-                    self.auth.signIn(with: credential) { (res, err) in
+                    self.auth.signIn(with: credential) { [self] (res, err) in
                         if err != nil {
                             print((err?.localizedDescription)!)
                             return
                         }
-                        DispatchQueue.main.async {
-                            completion(.success(true))
-                        }
+                        
+                        createUserDocument(id: res!.user.uid) { result in
+                            DispatchQueue.main.async {
+                                completion(.success(true))
+                            }
 
-                        print("Success")
+                            print("Success")
+                        }
                     }
                 }
             }
@@ -145,11 +152,50 @@ class APIService {
                     }
                     return
                 }
-                DispatchQueue.main.async {
-                    completion(.success(true))
-                }
+                
+                createUserDocument(id: result!.user.uid) { result in
+                    DispatchQueue.main.async {
+                        completion(.success(true))
+                    }
 
+                    print("Success")
+                }
             }
         }
+    }
+    
+    func createUserDocument(id: String, completion: @escaping (Bool) -> Void) {
+        documentExists(collection: "Users", id: id) { result in
+            if result {
+                completion(true)
+                print("Success")
+            } else {
+                DonationViewModel.shared.db.collection("Users").document(id).setData([
+                    "donationPoints": 0,
+                    "highestGameScore": 0,
+                    "userType": "Student"
+                ]) { err in
+                    if let err = err {
+                        print("Error writing new User document: \(err)")
+                        completion(false)
+                    } else {
+                        print("User's document successfully written!")
+                        completion(true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func documentExists(collection: String, id: String, completion: @escaping (Bool) -> Void){
+        let docRef = DonationViewModel.shared.db.collection(collection).document(id)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+        completion(false)
     }
 }

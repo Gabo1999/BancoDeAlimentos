@@ -12,6 +12,7 @@ class DonationViewModel: ObservableObject {
     @Published var donations: [DonationModel] = []
     @Published var noDonations = false
     let db = Firestore.firestore()
+    static let shared = DonationViewModel()
     
     init() {
         getAllDonations()

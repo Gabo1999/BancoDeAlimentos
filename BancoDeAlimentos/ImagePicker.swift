@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
         
@@ -33,6 +35,8 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
+        picker.allowsEditing = false
+        picker.sourceType = sourceType
         picker.delegate = context.coordinator
         return picker
     }
