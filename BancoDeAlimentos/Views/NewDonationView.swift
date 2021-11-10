@@ -152,9 +152,9 @@ struct NewDonationView: View {
     }
     
     private var administratorSection: some View {
-        Section(header: Text("Donation")) {
+        Section() {
             TextField("Donation Title", text: $titleToGive)
-                    .font(.title)
+                .font(.title)
             TextField("Description", text: $descriptionToGive)
                 .font(.body)
             Picker("Points", selection: $pointsToGive) {

@@ -196,6 +196,5 @@ class APIService {
                 completion(false)
             }
         }
-        completion(false)
     }
 }
