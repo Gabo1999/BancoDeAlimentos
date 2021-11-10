@@ -1,16 +1,3 @@
-#ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#else
-#ifndef FOUNDATION_EXPORT
-#if defined(__cplusplus)
-#define FOUNDATION_EXPORT extern "C"
-#else
-#define FOUNDATION_EXPORT extern
-#endif
-#endif
-#endif
-
-
-FOUNDATION_EXPORT double Pods_BancoDeAlimentosVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BancoDeAlimentosVersionString[];
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:078099bced3e95736b3c92bd552cc39c49be7738493db98ae765fea705297f3e
+size 334

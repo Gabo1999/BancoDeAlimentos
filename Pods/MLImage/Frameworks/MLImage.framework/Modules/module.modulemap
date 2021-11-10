@@ -1,8 +1,3 @@
-framework module MLImage {
-  umbrella header "MLImage.h"
-  export *
-  module * { export * }
-  link framework "CoreGraphics"
-  link framework "CoreMedia"
-  link framework "CoreVideo"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:486ed359f67a463de838e8319f3c26f4076dd646ee2079cca9fdacf86169d52e
+size 184

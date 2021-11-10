@@ -130,6 +130,7 @@ struct NewDonationView: View {
         }
         .onAppear {
             getUserType { result in
+                print(result)
                 typeUser = result
                 finishedDefiningUser = true
             }
@@ -171,7 +172,7 @@ struct NewDonationView: View {
             if titleToGive != "" && pointsToGive != "" && descriptionToGive != "" {
                 Button(action: {
                     idTest = DonationViewModel.shared.db.collection("Donations").document().documentID
-                    qrText = "\(idTest)\n\(pointsToGive)\n\(titleToGive)\n\(description)"
+                    qrText = "\(idTest)\n\(pointsToGive)\n\(titleToGive)\n\(descriptionToGive)"
                     showQR = true
                 }) {
                     Text("Generate QR")

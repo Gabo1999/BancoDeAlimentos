@@ -1,17 +1,3 @@
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-/** A model that is stored remotely on the server and downloaded to the device. */
-NS_SWIFT_NAME(RemoteModel)
-@interface MLKRemoteModel : NSObject
-
-/** The model name. */
-@property(nonatomic, copy, readonly) NSString *name;
-
-/** Unavailable. */
-- (instancetype)init NS_UNAVAILABLE;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:66f23b2ceb96660861f77e4014d4b56a4dbbba864bd48035b7183ead6ea8baea
+size 371

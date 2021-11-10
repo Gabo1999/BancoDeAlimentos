@@ -1,11 +1,3 @@
-# ML Kit Vision SDK
-
-For more information, check out [ML Kit] (https://developers.google.com/ml-kit/guides).
-
-## Getting Started with Cocoapods
-
-Add the following to your Podfile
-
-```
-pod 'GoogleMLKit/Vision'
-```
+version https://git-lfs.github.com/spec/v1
+oid sha256:dce6c69a40c67d05be93f1cb964f48f29b7a7f6a60a414578f9f197b7378ba96
+size 213

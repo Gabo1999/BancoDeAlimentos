@@ -1,28 +1,3 @@
-#ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#else
-#ifndef FOUNDATION_EXPORT
-#if defined(__cplusplus)
-#define FOUNDATION_EXPORT extern "C"
-#else
-#define FOUNDATION_EXPORT extern
-#endif
-#endif
-#endif
-
-#import "GULAppEnvironmentUtil.h"
-#import "GULHeartbeatDateStorable.h"
-#import "GULHeartbeatDateStorage.h"
-#import "GULHeartbeatDateStorageUserDefaults.h"
-#import "GULKeychainStorage.h"
-#import "GULKeychainUtils.h"
-#import "GULSecureCoding.h"
-#import "GULURLSessionDataResponse.h"
-#import "NSURLSession+GULPromises.h"
-#import "GULLogger.h"
-#import "GULLoggerLevel.h"
-#import "GULUserDefaults.h"
-
-FOUNDATION_EXPORT double GoogleUtilitiesVersionNumber;
-FOUNDATION_EXPORT const unsigned char GoogleUtilitiesVersionString[];
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:fce1f24af909d1f437f3cbec662172b24e535f1d179cf3987e7c98cc34bb0839
+size 717

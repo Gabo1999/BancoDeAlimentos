@@ -1,24 +1,3 @@
-#ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#else
-#ifndef FOUNDATION_EXPORT
-#if defined(__cplusplus)
-#define FOUNDATION_EXPORT extern "C"
-#else
-#define FOUNDATION_EXPORT extern
-#endif
-#endif
-#endif
-
-#import "GTMDebugSelectorValidation.h"
-#import "GTMDebugThreadValidation.h"
-#import "GTMMethodCheck.h"
-#import "GTMDefines.h"
-#import "GTMLogger.h"
-#import "GTMNSData+zlib.h"
-#import "GTMNSDictionary+URLArguments.h"
-#import "GTMNSString+URLArguments.h"
-
-FOUNDATION_EXPORT double GoogleToolboxForMacVersionNumber;
-FOUNDATION_EXPORT const unsigned char GoogleToolboxForMacVersionString[];
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:1fb642618e60ca08f40bc34cb52381457bf987494272a63cf90f08c8f3d7bcdf
+size 583

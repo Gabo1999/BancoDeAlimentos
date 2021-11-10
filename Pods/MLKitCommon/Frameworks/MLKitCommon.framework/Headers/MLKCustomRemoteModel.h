@@ -1,26 +1,3 @@
-#import <Foundation/Foundation.h>
-
-#import "MLKRemoteModel.h"
-
-@class MLKRemoteModelSource;
-
-NS_ASSUME_NONNULL_BEGIN
-
-/** A custom model that is stored remotely on the server and downloaded to the device. */
-NS_SWIFT_NAME(CustomRemoteModel)
-@interface MLKCustomRemoteModel : MLKRemoteModel
-
-/**
- * Creates a new instance with the given remote model source.
- *
- * @param remoteModelSource The source of the custom remote model.
- * @return A new `CustomRemoteModel` instance.
- */
-- (instancetype)initWithRemoteModelSource:(MLKRemoteModelSource *)remoteModelSource;
-
-/** Unavailable. */
-- (instancetype)init NS_UNAVAILABLE;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:c921880b6edabf8f1f2f28779687037f4b78a280ea460416a7c8de0e417c7280
+size 650
