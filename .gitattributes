@@ -4,3 +4,4 @@ Pods/MLKitBarcodeScanning/Frameworks/MLKitBarcodeScanning.framework/MLKitBarcode
 Pods/MLKitBarcodeScanning/Frameworks/MLKitBarcodeScanning.framework/MLKitBarcodeScanning* filter=lfs diff=lfs merge=lfs -text
 /Users/davidjosuemarcialquero/Documents/BancoDeAlimentos/Pods/MLKitBarcodeScanning/Frameworks/MLKitBarcodeScanning.framework/MLKitBarcodeScanning filter=lfs diff=lfs merge=lfs -text
 Pods/** filter=lfs diff=lfs merge=lfs -text
+*.usdz filter=lfs diff=lfs merge=lfs -text

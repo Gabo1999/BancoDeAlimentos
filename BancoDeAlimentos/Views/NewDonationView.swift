@@ -218,7 +218,7 @@ struct NewDonationView: View {
                 let strConverted = String(decoding: barcode.rawData!, as: UTF8.self)
                 print("FqakPUGxmZJEGfOsbh\n52\nDonación Prueba\nEsta es una prueba de QR" == strConverted)
                 print(strConverted)
-                let newDonation = strConverted.components(separatedBy: "\\n")
+                let newDonation = strConverted.components(separatedBy: "\n")
                 print(newDonation.count)
                 print(newDonation)
                 guard newDonation.count == 4 else {
@@ -236,7 +236,8 @@ struct NewDonationView: View {
     
     func uploadDonation(id: String, points: Int, title: String, description: String) {
         documentExists(collection: "Donations", id: id) { (exists) in
-            if !exists {
+            switch exists {
+            case false:
                 var pictureURL = "https://firebasestorage.googleapis.com/v0/b/bancodealimentos-9473b.appspot.com/o/img_alimento-energia-hd-1024x675.jpg?alt=media&token=3b3c0d94-40ae-47bc-b898-ec62dcb8c69c"
                 uploadPicture() { (url) in
                     pictureURL = url
@@ -247,7 +248,7 @@ struct NewDonationView: View {
                         print("Error writing donation to Firestore: \(error)")
                     }
                 }
-            } else {
+            case true:
                 showToast = true
             }
         }
@@ -262,38 +263,51 @@ struct NewDonationView: View {
         metadata.contentType = "image/jpeg"
         guard let imageData = inputImage2?.jpegData(compressionQuality: 0.5)  else {
             print("No PNG")
-            completion(pictureURL)
+            DispatchQueue.main.async {
+                completion(pictureURL)
+            }
             return
         }
         _ = imagesRef.putData(imageData, metadata: metadata) { (metadata, error) in
             guard metadata != nil else {
                 print("Empty Metadata")
-                completion(pictureURL)
+                DispatchQueue.main.async {
+                    completion(pictureURL)
+                }
                 return
             }
             imagesRef.downloadURL { (url, error) in
                 guard url != nil else {
                     print("Empty URL: \(String(describing: error))")
-                    completion(pictureURL)
+                    DispatchQueue.main.async {
+                        completion(pictureURL)
+                    }
                     return
                 }
                 pictureURL = url!.absoluteString
-                completion(pictureURL)
+                DispatchQueue.main.async {
+                    completion(pictureURL)
+                }
+                return
             }
         }
-        completion(pictureURL)
     }
     
     func getUserType(completion: @escaping (String) -> Void) {
         let docRef = DonationViewModel.shared.db.collection("Users").document(APIService.shared.auth.currentUser!.uid)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                completion(document.get("userType") as! String)
+                DispatchQueue.main.async {
+                    completion(document.get("userType") as! String)
+                }
+                return
             } else {
-                completion("Student")
+                DispatchQueue.main.async {
+                    completion("Student")
+                }
+                return
             }
         }
-        completion("Student")
     }
     
     
@@ -301,12 +315,17 @@ struct NewDonationView: View {
         let docRef = DonationViewModel.shared.db.collection(collection).document(id)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
+                return
             } else {
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+                return
             }
         }
-        completion(false)
     }
     
     func generateQRCode(from string: String) -> UIImage {

@@ -24,6 +24,16 @@
 		870E6755271942FA0052C01E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E6754271942FA0052C01E /* SignUpView.swift */; };
 		870E675927195C650052C01E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 870E675827195C650052C01E /* GoogleSignIn */; };
 		87134DBF2734F786007FC123 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 87134DBE2734F786007FC123 /* CodeScanner */; };
+		8729409D2744CC18000E266B /* CosmonautSuit_en.reality in Resources */ = {isa = PBXBuildFile; fileRef = 8729409B2744CC17000E266B /* CosmonautSuit_en.reality */; };
+		8729409E2744CC18000E266B /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8729409C2744CC18000E266B /* tv_retro.usdz */; };
+		872940A12744CC39000E266B /* redfish.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 872940A02744CC39000E266B /* redfish.usdz */; };
+		872940A42744CEC8000E266B /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940A32744CEC8000E266B /* ControlView.swift */; };
+		872940A72744D559000E266B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940A62744D559000E266B /* BrowseView.swift */; };
+		872940AA2744D7B6000E266B /* TrophiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940A92744D7B6000E266B /* TrophiesModel.swift */; };
+		872940AD2744E69F000E266B /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940AC2744E69F000E266B /* PlacementSettings.swift */; };
+		872940B02744E873000E266B /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940AF2744E873000E266B /* PlacementView.swift */; };
+		872940B42744EB4F000E266B /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 872940B32744EB4F000E266B /* FocusEntity */; };
+		872940B72744EB66000E266B /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940B62744EB66000E266B /* CustomARView.swift */; };
 		873FAB092739941D003627D8 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB082739941D003627D8 /* ToastUI */; };
 		873FAB0C2739AAFC003627D8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB0B2739AAFC003627D8 /* FirebaseStorage */; };
 		873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4682721CEDD001EBEA5 /* GameView.swift */; };
@@ -58,6 +68,15 @@
 		870E674627190F570052C01E /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		870E6749271925C50052C01E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		870E6754271942FA0052C01E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		8729409B2744CC17000E266B /* CosmonautSuit_en.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = CosmonautSuit_en.reality; sourceTree = "<group>"; };
+		8729409C2744CC18000E266B /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
+		872940A02744CC39000E266B /* redfish.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = redfish.usdz; sourceTree = "<group>"; };
+		872940A32744CEC8000E266B /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		872940A62744D559000E266B /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		872940A92744D7B6000E266B /* TrophiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesModel.swift; sourceTree = "<group>"; };
+		872940AC2744E69F000E266B /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
+		872940AF2744E873000E266B /* PlacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementView.swift; sourceTree = "<group>"; };
+		872940B62744EB66000E266B /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		873FD4682721CEDD001EBEA5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		873FD46B2721CEF0001EBEA5 /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
 		873FD46E2721CEFB001EBEA5 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
@@ -76,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872940B42744EB4F000E266B /* FocusEntity in Frameworks */,
 				87B14C00272102C900752510 /* FacebookAEM in Frameworks */,
 				87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */,
 				87B14C032721030000752510 /* FacebookCore in Frameworks */,
@@ -117,6 +137,7 @@
 		870E671F2719061C0052C01E /* BancoDeAlimentos */ = {
 			isa = PBXGroup;
 			children = (
+				8729408F2744C86B000E266B /* 3D Assets */,
 				870E673627190A3F0052C01E /* Services */,
 				870E6731271909F50052C01E /* Views */,
 				870E6730271909EE0052C01E /* Models */,
@@ -147,6 +168,7 @@
 				870E673B27190B3D0052C01E /* UIApplicationExtension.swift */,
 				873FD4712721D36B001EBEA5 /* DonationModel.swift */,
 				873FD4742721D41F001EBEA5 /* DonationViewModel.swift */,
+				872940A92744D7B6000E266B /* TrophiesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +184,10 @@
 				873FD46E2721CEFB001EBEA5 /* RankingView.swift */,
 				873FD47A2721DC18001EBEA5 /* DonationRow.swift */,
 				87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */,
+				872940A32744CEC8000E266B /* ControlView.swift */,
+				872940A62744D559000E266B /* BrowseView.swift */,
+				872940AF2744E873000E266B /* PlacementView.swift */,
+				872940B62744EB66000E266B /* CustomARView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +196,19 @@
 			isa = PBXGroup;
 			children = (
 				870E673727190A4C0052C01E /* APIService.swift */,
+				872940AC2744E69F000E266B /* PlacementSettings.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8729408F2744C86B000E266B /* 3D Assets */ = {
+			isa = PBXGroup;
+			children = (
+				872940A02744CC39000E266B /* redfish.usdz */,
+				8729409B2744CC17000E266B /* CosmonautSuit_en.reality */,
+				8729409C2744CC18000E266B /* tv_retro.usdz */,
+			);
+			path = "3D Assets";
 			sourceTree = "<group>";
 		};
 		87B14BFE272102C800752510 /* Frameworks */ = {
@@ -223,6 +260,7 @@
 				87134DBE2734F786007FC123 /* CodeScanner */,
 				873FAB082739941D003627D8 /* ToastUI */,
 				873FAB0B2739AAFC003627D8 /* FirebaseStorage */,
+				872940B32744EB4F000E266B /* FocusEntity */,
 			);
 			productName = BancoDeAlimentos;
 			productReference = 870E671D2719061C0052C01E /* BancoDeAlimentos.app */;
@@ -259,6 +297,7 @@
 				873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				873FAB072739941D003627D8 /* XCRemoteSwiftPackageReference "ToastUI" */,
+				872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 870E671E2719061C0052C01E /* Products */;
 			projectDirPath = "";
@@ -274,8 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8729409D2744CC18000E266B /* CosmonautSuit_en.reality in Resources */,
+				872940A12744CC39000E266B /* redfish.usdz in Resources */,
 				870E67282719061C0052C01E /* Preview Assets.xcassets in Resources */,
 				870E674A271925C50052C01E /* GoogleService-Info.plist in Resources */,
+				8729409E2744CC18000E266B /* tv_retro.usdz in Resources */,
 				870E67252719061C0052C01E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,22 +371,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872940B02744E873000E266B /* PlacementView.swift in Sources */,
 				870E673F27190BB00052C01E /* LoginModel.swift in Sources */,
+				872940A42744CEC8000E266B /* ControlView.swift in Sources */,
 				87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */,
 				873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */,
 				8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */,
 				870E674327190D780052C01E /* LoginView.swift in Sources */,
+				872940AD2744E69F000E266B /* PlacementSettings.swift in Sources */,
 				870E673327190A070052C01E /* Credentials.swift in Sources */,
 				873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */,
 				873FD4752721D41F001EBEA5 /* DonationViewModel.swift in Sources */,
 				870E67232719061C0052C01E /* ContentView.swift in Sources */,
 				873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */,
+				872940A72744D559000E266B /* BrowseView.swift in Sources */,
 				870E673C27190B3D0052C01E /* UIApplicationExtension.swift in Sources */,
 				870E673827190A4C0052C01E /* APIService.swift in Sources */,
 				870E67212719061C0052C01E /* BancoDeAlimentosApp.swift in Sources */,
 				870E6755271942FA0052C01E /* SignUpView.swift in Sources */,
+				872940AA2744D7B6000E266B /* TrophiesModel.swift in Sources */,
 				873FD4722721D36B001EBEA5 /* DonationModel.swift in Sources */,
 				870E674727190F570052C01E /* Authentication.swift in Sources */,
+				872940B72744EB66000E266B /* CustomARView.swift in Sources */,
 				873FD46C2721CEF0001EBEA5 /* DonationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +619,14 @@
 				minimumVersion = 1.0.7;
 			};
 		};
+		872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
 		873FAB072739941D003627D8 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quanshousio/ToastUI";
@@ -622,6 +678,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
+		};
+		872940B32744EB4F000E266B /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
 		};
 		873FAB082739941D003627D8 /* ToastUI */ = {
 			isa = XCSwiftPackageProductDependency;

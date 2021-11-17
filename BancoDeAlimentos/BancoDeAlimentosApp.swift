@@ -19,6 +19,7 @@ struct BancoDeAlimentosApp: App {
     
     @StateObject var authentication = Authentication()
     @StateObject var loginModel = LoginModel()
+    @StateObject var placementSettings = PlacementSettings()
     
     var body: some Scene {
         WindowGroup {
@@ -26,6 +27,7 @@ struct BancoDeAlimentosApp: App {
                 ContentView()
                     .environmentObject(authentication)
                     .environmentObject(loginModel)
+                    .environmentObject(placementSettings)
             } else {
                 LoginView()
                     .environmentObject(authentication)
