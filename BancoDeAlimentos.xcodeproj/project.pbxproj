@@ -34,6 +34,7 @@
 		872940B02744E873000E266B /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940AF2744E873000E266B /* PlacementView.swift */; };
 		872940B42744EB4F000E266B /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 872940B32744EB4F000E266B /* FocusEntity */; };
 		872940B72744EB66000E266B /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940B62744EB66000E266B /* CustomARView.swift */; };
+		873E4A2B274EBA4E00C90E9F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E4A2A274EBA4E00C90E9F /* ViewExtensions.swift */; };
 		873FAB092739941D003627D8 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB082739941D003627D8 /* ToastUI */; };
 		873FAB0C2739AAFC003627D8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB0B2739AAFC003627D8 /* FirebaseStorage */; };
 		873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4682721CEDD001EBEA5 /* GameView.swift */; };
@@ -77,6 +78,7 @@
 		872940AC2744E69F000E266B /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
 		872940AF2744E873000E266B /* PlacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementView.swift; sourceTree = "<group>"; };
 		872940B62744EB66000E266B /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		873E4A2A274EBA4E00C90E9F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		873FD4682721CEDD001EBEA5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		873FD46B2721CEF0001EBEA5 /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
 		873FD46E2721CEFB001EBEA5 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				870E673727190A4C0052C01E /* APIService.swift */,
 				872940AC2744E69F000E266B /* PlacementSettings.swift */,
+				873E4A2A274EBA4E00C90E9F /* ViewExtensions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				872940AD2744E69F000E266B /* PlacementSettings.swift in Sources */,
 				870E673327190A070052C01E /* Credentials.swift in Sources */,
 				873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */,
+				873E4A2B274EBA4E00C90E9F /* ViewExtensions.swift in Sources */,
 				873FD4752721D41F001EBEA5 /* DonationViewModel.swift in Sources */,
 				870E67232719061C0052C01E /* ContentView.swift in Sources */,
 				873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */,

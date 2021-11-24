@@ -27,8 +27,11 @@ class PlacementSettings: ObservableObject {
             }
             
             print("Setting confirmedModel to \(model.name)")
+            self.recentlyPlaced.append(model)
         }
     }
+    
+    @Published var recentlyPlaced: [TrophiesModel] = []
     
     // This property retains the cancellable object for our SecneEvents.Update subscriber
     var sceneObserver: Cancellable?
