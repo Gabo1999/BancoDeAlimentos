@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TT Commons Black.otf</string>
+		<string>TT Commons Bold.otf</string>
+		<string>TT Commons ExtraBold.otf</string>
+		<string>TT Commons Light.otf</string>
+		<string>TT Commons Medium.otf</string>
+		<string>TT Commons Regular.otf</string>
+		<string>NeueHaasUnicaPro-Black.ttf</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

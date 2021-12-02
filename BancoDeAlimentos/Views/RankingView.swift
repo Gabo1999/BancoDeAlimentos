@@ -2,77 +2,69 @@
 //  RankingView.swift
 //  BancoDeAlimentos
 //
-//  Created by David Josué Marcial Quero on 21/10/21.
+//  Created by David Josué Marcial Quero on 01/12/21.
 //
 
 import SwiftUI
-import RealityKit
 
 struct RankingView: View {
-    
-    @EnvironmentObject var placementSettings: PlacementSettings
-    @State private var isControlsView: Bool = true
-    @State private var showBrowser: Bool = false
-    
+    @StateObject var rankingData = RankingModel()
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ARViewContainer()
-            if self.placementSettings.selectedModel == nil {
-                ControlView(isControlsVisible: $isControlsView, showBrowse: $showBrowser)
-            } else {
-                PlacementView()
+        ZStack {
+            Color("CaritasColorSecundario").edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading) {
+                Text("Your stats!")
+                    .bold()
+                    .font(.system(size: 20))
+                    .padding(.top, 20)
+                    .font(.custom("TT Commons Bold.otf", size: 15))
+                HStack {
+                    Image("caritasArtboard 8 copy")
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        .clipShape(Circle())
+                    Text(rankingData.currentUser.userName)
+                        .bold()
+                        .font(.custom("TT Commons Bold.otf", size: 15))
+                    Text("\(rankingData.currentUser.score) points")
+                        .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                }
+                .padding(.bottom, 20)
+                if !rankingData.noUsers {
+                    Text("Top \(rankingData.topTenUsers.count) players")
+                        .bold()
+                    Divider()
+                        .padding(.bottom, 10)
+                    ForEach(rankingData.topTenUsers.indices, id: \.self) { index in
+                        HStack {
+                            Text("\(index + 1)")
+                                .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                            Image("caritasArtboard 8 copy")
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
+                            Text(rankingData.topTenUsers[index].userName)
+                                .bold()
+                                .font(.custom("TT Commons Bold", size: 15))
+                            Text("\(rankingData.topTenUsers[index].score) points")
+                                .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                        }
+                        .padding(.top, 20)
+                    }
+                } else {
+                    Divider()
+                    Text("No ranked users yet")
+                        .font(.custom("TT Commons Bold.otf", size: 15))
+                }
+                Spacer()
             }
+            .frame(width: 350)
         }
-        .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    @EnvironmentObject var placementSettings: PlacementSettings
-    
-    func makeUIView(context: Context) -> CustomARView {
-        let arView = CustomARView(frame: .zero)
-        
-        // Subscribe to SceneEvents.Update
-        self.placementSettings.sceneObserver = arView.scene.subscribe(to: SceneEvents.Update.self { (event) in
-            self.updateScene(for: arView)
-        })
-        
-        return arView
-    }
-    
-    func updateUIView(_ uiView: CustomARView, context: Context) {
-    }
-    
-    private func updateScene(for arView: CustomARView) {
-        
-        // Only display focusEntity when the user has selected a model for placement
-        arView.focusEntity?.isEnabled = self.placementSettings.selectedModel != nil
-        
-        if let confirmedModel = self.placementSettings.confirmedModel, let modelEntity = confirmedModel.modelEntity {
-            self.place(modelEntity, in: arView)
-            self.placementSettings.confirmedModel = nil
-        }
-    }
-    
-    private func place(_ modelEntity: ModelEntity, in arView: ARView) {
-        let clonedEntity = modelEntity.clone(recursive: true)
-        
-        clonedEntity.generateCollisionShapes(recursive: true)
-        arView.installGestures([.translation, .rotation], for: clonedEntity)
-        
-        let anchorEntity = AnchorEntity(plane: .any)
-        anchorEntity.addChild(clonedEntity)
-        
-        arView.scene.addAnchor(anchorEntity)
-        print("Added modelEntity to scene.")
     }
 }
 
 struct RankingView_Previews: PreviewProvider {
     static var previews: some View {
         RankingView()
-            .environmentObject(PlacementSettings())
     }
 }

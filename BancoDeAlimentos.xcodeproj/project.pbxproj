@@ -32,26 +32,37 @@
 		872940AA2744D7B6000E266B /* TrophiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940A92744D7B6000E266B /* TrophiesModel.swift */; };
 		872940AD2744E69F000E266B /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940AC2744E69F000E266B /* PlacementSettings.swift */; };
 		872940B02744E873000E266B /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940AF2744E873000E266B /* PlacementView.swift */; };
-		872940B42744EB4F000E266B /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 872940B32744EB4F000E266B /* FocusEntity */; };
 		872940B72744EB66000E266B /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872940B62744EB66000E266B /* CustomARView.swift */; };
 		873E4A2B274EBA4E00C90E9F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E4A2A274EBA4E00C90E9F /* ViewExtensions.swift */; };
 		873FAB092739941D003627D8 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB082739941D003627D8 /* ToastUI */; };
 		873FAB0C2739AAFC003627D8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 873FAB0B2739AAFC003627D8 /* FirebaseStorage */; };
 		873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4682721CEDD001EBEA5 /* GameView.swift */; };
 		873FD46C2721CEF0001EBEA5 /* DonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD46B2721CEF0001EBEA5 /* DonationsView.swift */; };
-		873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD46E2721CEFB001EBEA5 /* RankingView.swift */; };
+		873FD46F2721CEFB001EBEA5 /* TrophiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD46E2721CEFB001EBEA5 /* TrophiesView.swift */; };
 		873FD4722721D36B001EBEA5 /* DonationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4712721D36B001EBEA5 /* DonationModel.swift */; };
 		873FD4752721D41F001EBEA5 /* DonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD4742721D41F001EBEA5 /* DonationViewModel.swift */; };
 		873FD4782721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 873FD4772721DB6B001EBEA5 /* FirebaseFirestoreSwift-Beta */; };
 		873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873FD47A2721DC18001EBEA5 /* DonationRow.swift */; };
 		873FD47F2721DEAB001EBEA5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 873FD47E2721DEAB001EBEA5 /* Kingfisher */; };
+		874146742757363F0092153A /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874146732757363F0092153A /* NicknameView.swift */; };
+		874146BE27578BE60092153A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874146BD27578BE60092153A /* UserModel.swift */; };
+		874146C32757D2420092153A /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874146C22757D2420092153A /* RankingView.swift */; };
+		874146C62757F78C0092153A /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874146C52757F78C0092153A /* RankingModel.swift */; };
+		874146C92758352C0092153A /* DonationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874146C82758352C0092153A /* DonationsDetailView.swift */; };
+		874146CD275841690092153A /* NeueHaasUnicaPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 874146CC275841690092153A /* NeueHaasUnicaPro-Black.ttf */; };
+		874146D5275841FA0092153A /* TT Commons Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146CF275841F70092153A /* TT Commons Bold.otf */; };
+		874146D6275841FA0092153A /* TT Commons Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146D0275841F70092153A /* TT Commons Black.otf */; };
+		874146D7275841FA0092153A /* TT Commons Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146D1275841F80092153A /* TT Commons Regular.otf */; };
+		874146D8275841FA0092153A /* TT Commons Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146D2275841F90092153A /* TT Commons Light.otf */; };
+		874146D9275841FA0092153A /* TT Commons Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146D3275841F90092153A /* TT Commons Medium.otf */; };
+		874146DE2758463A0092153A /* TT Commons ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146DD2758463A0092153A /* TT Commons ExtraBold.otf */; };
 		8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793C9E32733A4E8005B6A64 /* ImagePicker.swift */; };
 		87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BF72720F6F900752510 /* FacebookLogin */; };
 		87B14C00272102C900752510 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BFF272102C900752510 /* FacebookAEM */; };
 		87B14C032721030000752510 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C022721030000752510 /* FacebookCore */; };
 		87B14C062721031300752510 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C052721031300752510 /* FacebookBasics */; };
 		87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */; };
-		F1F9CE813DF5E8ECAF3EE4E4 /* Pods_BancoDeAlimentos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */; };
+		BD61703B45107F74B960DCB9 /* Pods_BancoDeAlimentos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FFD7AEEEC982048FF62CE4 /* Pods_BancoDeAlimentos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,15 +92,27 @@
 		873E4A2A274EBA4E00C90E9F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		873FD4682721CEDD001EBEA5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		873FD46B2721CEF0001EBEA5 /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
-		873FD46E2721CEFB001EBEA5 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		873FD46E2721CEFB001EBEA5 /* TrophiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesView.swift; sourceTree = "<group>"; };
 		873FD4712721D36B001EBEA5 /* DonationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationModel.swift; sourceTree = "<group>"; };
 		873FD4742721D41F001EBEA5 /* DonationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModel.swift; sourceTree = "<group>"; };
 		873FD47A2721DC18001EBEA5 /* DonationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRow.swift; sourceTree = "<group>"; };
+		874146732757363F0092153A /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
+		874146BD27578BE60092153A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		874146C22757D2420092153A /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		874146C52757F78C0092153A /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		874146C82758352C0092153A /* DonationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsDetailView.swift; sourceTree = "<group>"; };
+		874146CC275841690092153A /* NeueHaasUnicaPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeueHaasUnicaPro-Black.ttf"; sourceTree = "<group>"; };
+		874146CF275841F70092153A /* TT Commons Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons Bold.otf"; sourceTree = "<group>"; };
+		874146D0275841F70092153A /* TT Commons Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons Black.otf"; sourceTree = "<group>"; };
+		874146D1275841F80092153A /* TT Commons Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons Regular.otf"; sourceTree = "<group>"; };
+		874146D2275841F90092153A /* TT Commons Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons Light.otf"; sourceTree = "<group>"; };
+		874146D3275841F90092153A /* TT Commons Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons Medium.otf"; sourceTree = "<group>"; };
+		874146DD2758463A0092153A /* TT Commons ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TT Commons ExtraBold.otf"; sourceTree = "<group>"; };
 		8793C9E32733A4E8005B6A64 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDonationView.swift; sourceTree = "<group>"; };
-		8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.release.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.release.xcconfig"; sourceTree = "<group>"; };
-		AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.debug.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.debug.xcconfig"; sourceTree = "<group>"; };
-		C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BancoDeAlimentos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D848C0FEF4BAA318A2CC97 /* Pods-BancoDeAlimentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.release.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.release.xcconfig"; sourceTree = "<group>"; };
+		CEB487A538B0F123B7817E79 /* Pods-BancoDeAlimentos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BancoDeAlimentos.debug.xcconfig"; path = "Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos.debug.xcconfig"; sourceTree = "<group>"; };
+		D3FFD7AEEEC982048FF62CE4 /* Pods_BancoDeAlimentos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BancoDeAlimentos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				872940B42744EB4F000E266B /* FocusEntity in Frameworks */,
 				87B14C00272102C900752510 /* FacebookAEM in Frameworks */,
 				87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */,
 				87B14C032721030000752510 /* FacebookCore in Frameworks */,
@@ -111,7 +133,7 @@
 				870E674E271927CE0052C01E /* FirebaseAuth in Frameworks */,
 				873FAB0C2739AAFC003627D8 /* FirebaseStorage in Frameworks */,
 				870E6750271927CE0052C01E /* FirebaseFirestore in Frameworks */,
-				F1F9CE813DF5E8ECAF3EE4E4 /* Pods_BancoDeAlimentos.framework in Frameworks */,
+				BD61703B45107F74B960DCB9 /* Pods_BancoDeAlimentos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +145,8 @@
 			children = (
 				870E671F2719061C0052C01E /* BancoDeAlimentos */,
 				870E671E2719061C0052C01E /* Products */,
-				87B14BFE272102C800752510 /* Frameworks */,
 				9BF1CBE2685BF571DF0B55F6 /* Pods */,
+				AAA44E44AD146BD76A4B95C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +161,8 @@
 		870E671F2719061C0052C01E /* BancoDeAlimentos */ = {
 			isa = PBXGroup;
 			children = (
+				874146CB275841430092153A /* Fonts */,
+				874146B82757891C0092153A /* Structs */,
 				8729408F2744C86B000E266B /* 3D Assets */,
 				870E673627190A3F0052C01E /* Services */,
 				870E6731271909F50052C01E /* Views */,
@@ -171,6 +195,8 @@
 				873FD4712721D36B001EBEA5 /* DonationModel.swift */,
 				873FD4742721D41F001EBEA5 /* DonationViewModel.swift */,
 				872940A92744D7B6000E266B /* TrophiesModel.swift */,
+				874146BD27578BE60092153A /* UserModel.swift */,
+				874146C52757F78C0092153A /* RankingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,13 +209,16 @@
 				870E6754271942FA0052C01E /* SignUpView.swift */,
 				873FD4682721CEDD001EBEA5 /* GameView.swift */,
 				873FD46B2721CEF0001EBEA5 /* DonationsView.swift */,
-				873FD46E2721CEFB001EBEA5 /* RankingView.swift */,
+				873FD46E2721CEFB001EBEA5 /* TrophiesView.swift */,
 				873FD47A2721DC18001EBEA5 /* DonationRow.swift */,
 				87B7FCDF272314AE00A4B3E6 /* NewDonationView.swift */,
 				872940A32744CEC8000E266B /* ControlView.swift */,
 				872940A62744D559000E266B /* BrowseView.swift */,
 				872940AF2744E873000E266B /* PlacementView.swift */,
 				872940B62744EB66000E266B /* CustomARView.swift */,
+				874146732757363F0092153A /* NicknameView.swift */,
+				874146C22757D2420092153A /* RankingView.swift */,
+				874146C82758352C0092153A /* DonationsDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,21 +243,42 @@
 			path = "3D Assets";
 			sourceTree = "<group>";
 		};
-		87B14BFE272102C800752510 /* Frameworks */ = {
+		874146B82757891C0092153A /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				C79357DE88502DE5D79DA6B1 /* Pods_BancoDeAlimentos.framework */,
 			);
-			name = Frameworks;
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		874146CB275841430092153A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				874146DD2758463A0092153A /* TT Commons ExtraBold.otf */,
+				874146D0275841F70092153A /* TT Commons Black.otf */,
+				874146CF275841F70092153A /* TT Commons Bold.otf */,
+				874146D2275841F90092153A /* TT Commons Light.otf */,
+				874146D3275841F90092153A /* TT Commons Medium.otf */,
+				874146D1275841F80092153A /* TT Commons Regular.otf */,
+				874146CC275841690092153A /* NeueHaasUnicaPro-Black.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9BF1CBE2685BF571DF0B55F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */,
-				8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */,
+				CEB487A538B0F123B7817E79 /* Pods-BancoDeAlimentos.debug.xcconfig */,
+				96D848C0FEF4BAA318A2CC97 /* Pods-BancoDeAlimentos.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AAA44E44AD146BD76A4B95C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3FFD7AEEEC982048FF62CE4 /* Pods_BancoDeAlimentos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,11 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 870E672C2719061C0052C01E /* Build configuration list for PBXNativeTarget "BancoDeAlimentos" */;
 			buildPhases = (
-				13D795562B6B72AE23AF07BB /* [CP] Check Pods Manifest.lock */,
+				7B88B88B654EF3207432052B /* [CP] Check Pods Manifest.lock */,
 				870E67192719061C0052C01E /* Sources */,
 				870E671A2719061C0052C01E /* Frameworks */,
 				870E671B2719061C0052C01E /* Resources */,
-				B2B519C94AD6F7D7DED10B2B /* [CP] Embed Pods Frameworks */,
+				043908A35848F1F9EC2D562D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,7 +313,6 @@
 				87134DBE2734F786007FC123 /* CodeScanner */,
 				873FAB082739941D003627D8 /* ToastUI */,
 				873FAB0B2739AAFC003627D8 /* FirebaseStorage */,
-				872940B32744EB4F000E266B /* FocusEntity */,
 			);
 			productName = BancoDeAlimentos;
 			productReference = 870E671D2719061C0052C01E /* BancoDeAlimentos.app */;
@@ -300,7 +349,6 @@
 				873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				873FAB072739941D003627D8 /* XCRemoteSwiftPackageReference "ToastUI" */,
-				872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 870E671E2719061C0052C01E /* Products */;
 			projectDirPath = "";
@@ -317,18 +365,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				8729409D2744CC18000E266B /* CosmonautSuit_en.reality in Resources */,
+				874146D7275841FA0092153A /* TT Commons Regular.otf in Resources */,
+				874146D8275841FA0092153A /* TT Commons Light.otf in Resources */,
+				874146D6275841FA0092153A /* TT Commons Black.otf in Resources */,
+				874146DE2758463A0092153A /* TT Commons ExtraBold.otf in Resources */,
 				872940A12744CC39000E266B /* redfish.usdz in Resources */,
+				874146CD275841690092153A /* NeueHaasUnicaPro-Black.ttf in Resources */,
 				870E67282719061C0052C01E /* Preview Assets.xcassets in Resources */,
 				870E674A271925C50052C01E /* GoogleService-Info.plist in Resources */,
 				8729409E2744CC18000E266B /* tv_retro.usdz in Resources */,
+				874146D9275841FA0092153A /* TT Commons Medium.otf in Resources */,
 				870E67252719061C0052C01E /* Assets.xcassets in Resources */,
+				874146D5275841FA0092153A /* TT Commons Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13D795562B6B72AE23AF07BB /* [CP] Check Pods Manifest.lock */ = {
+		043908A35848F1F9EC2D562D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B88B88B654EF3207432052B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,23 +422,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2B519C94AD6F7D7DED10B2B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BancoDeAlimentos/Pods-BancoDeAlimentos-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,21 +429,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874146C62757F78C0092153A /* RankingModel.swift in Sources */,
 				872940B02744E873000E266B /* PlacementView.swift in Sources */,
 				870E673F27190BB00052C01E /* LoginModel.swift in Sources */,
 				872940A42744CEC8000E266B /* ControlView.swift in Sources */,
 				87B7FCE0272314AE00A4B3E6 /* NewDonationView.swift in Sources */,
-				873FD46F2721CEFB001EBEA5 /* RankingView.swift in Sources */,
+				873FD46F2721CEFB001EBEA5 /* TrophiesView.swift in Sources */,
 				8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */,
 				870E674327190D780052C01E /* LoginView.swift in Sources */,
 				872940AD2744E69F000E266B /* PlacementSettings.swift in Sources */,
 				870E673327190A070052C01E /* Credentials.swift in Sources */,
 				873FD47B2721DC18001EBEA5 /* DonationRow.swift in Sources */,
+				874146C92758352C0092153A /* DonationsDetailView.swift in Sources */,
+				874146C32757D2420092153A /* RankingView.swift in Sources */,
 				873E4A2B274EBA4E00C90E9F /* ViewExtensions.swift in Sources */,
 				873FD4752721D41F001EBEA5 /* DonationViewModel.swift in Sources */,
 				870E67232719061C0052C01E /* ContentView.swift in Sources */,
 				873FD4692721CEDD001EBEA5 /* GameView.swift in Sources */,
 				872940A72744D559000E266B /* BrowseView.swift in Sources */,
+				874146742757363F0092153A /* NicknameView.swift in Sources */,
+				874146BE27578BE60092153A /* UserModel.swift in Sources */,
 				870E673C27190B3D0052C01E /* UIApplicationExtension.swift in Sources */,
 				870E673827190A4C0052C01E /* APIService.swift in Sources */,
 				870E67212719061C0052C01E /* BancoDeAlimentosApp.swift in Sources */,
@@ -459,6 +519,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -513,6 +574,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -522,7 +584,7 @@
 		};
 		870E672D2719061C0052C01E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFB2A4D3212525EBBC7AA9CA /* Pods-BancoDeAlimentos.debug.xcconfig */;
+			baseConfigurationReference = CEB487A538B0F123B7817E79 /* Pods-BancoDeAlimentos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -533,7 +595,7 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = BancoDeAlimentos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,7 +612,7 @@
 		};
 		870E672E2719061C0052C01E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C803FCB58CE41EEA813E490 /* Pods-BancoDeAlimentos.release.xcconfig */;
+			baseConfigurationReference = 96D848C0FEF4BAA318A2CC97 /* Pods-BancoDeAlimentos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,7 +623,7 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = BancoDeAlimentos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,14 +685,6 @@
 				minimumVersion = 1.0.7;
 			};
 		};
-		872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.3;
-			};
-		};
 		873FAB072739941D003627D8 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quanshousio/ToastUI";
@@ -682,11 +736,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		872940B32744EB4F000E266B /* FocusEntity */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 872940B22744EB4F000E266B /* XCRemoteSwiftPackageReference "FocusEntity" */;
-			productName = FocusEntity;
 		};
 		873FAB082739941D003627D8 /* ToastUI */ = {
 			isa = XCSwiftPackageProductDependency;

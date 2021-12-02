@@ -24,10 +24,15 @@ struct BancoDeAlimentosApp: App {
     var body: some Scene {
         WindowGroup {
             if authentication.isSignedInValidated() {
-                ContentView()
-                    .environmentObject(authentication)
-                    .environmentObject(loginModel)
-                    .environmentObject(placementSettings)
+                if authentication.firstSignIn {
+                    NicknameView()
+                        .environmentObject(authentication)
+                } else {
+                    ContentView()
+                        .environmentObject(authentication)
+                        .environmentObject(loginModel)
+                        .environmentObject(placementSettings)
+                }
             } else {
                 LoginView()
                     .environmentObject(authentication)

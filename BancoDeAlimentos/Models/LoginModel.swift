@@ -38,18 +38,22 @@ class LoginModel: ObservableObject {
         }
     }
     
-    func signUp(completion: @escaping (Bool) -> Void) {
+    func signUp(completion: @escaping (Bool, Bool) -> Void) {
         showSingUpProgressView = true
-        APIService.shared.signUp(credentials: credentials) { [unowned self] (result: Result<Bool, Authentication.SignUpError>) in
+        APIService.shared.signUp(credentials: credentials) { [unowned self] (result: Result<(Bool,Bool), Authentication.SignUpError>) in
             showSingUpProgressView = false
             switch result {
-            case .success:
-                completion(true)
+            case .success(let indicator):
+                DispatchQueue.main.async {
+                    completion(indicator.0, indicator.1)
+                }
             case .failure(let authError):
                 print("Failure")
                 credentials = Credentials()
                 signUpError = authError
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
             }
         }
     }
@@ -67,30 +71,38 @@ class LoginModel: ObservableObject {
         }
     }
     
-    func googleSignIn(completion: @escaping (Bool) -> Void) {
+    func googleSignIn(completion: @escaping (Bool, Bool) -> Void) {
         showProgressView = true
-        APIService.shared.googleSignIn() { [unowned self] (result: Result<Bool, Authentication.AuthenticationError>) in
+        APIService.shared.googleSignIn() { [unowned self] (result: Result<(Bool,Bool), Authentication.AuthenticationError>) in
             showProgressView = false
             switch result {
-            case .success:
-                completion(true)
+            case .success(let indicator):
+                DispatchQueue.main.async {
+                    completion(indicator.0, indicator.1)
+                }
             case .failure(let authError):
                 error = authError
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
             }
         }
     }
     
-    func facebookLogIn(completion: @escaping (Bool) -> Void) {
+    func facebookLogIn(completion: @escaping (Bool, Bool) -> Void) {
         showProgressView = true
-        APIService.shared.facebookLogIn() { [unowned self] (result: Result<Bool, Authentication.AuthenticationError>) in
+        APIService.shared.facebookLogIn() { [unowned self] (result: Result<(Bool,Bool), Authentication.AuthenticationError>) in
             showProgressView = false
             switch result {
-            case .success:
-                completion(true)
+            case .success(let indicator):
+                DispatchQueue.main.async {
+                    completion(indicator.0, indicator.1)
+                }
             case .failure(let authError):
                 error = authError
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
             }
         }
     }

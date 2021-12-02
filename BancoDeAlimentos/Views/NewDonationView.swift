@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import FirebaseFirestore
 import FirebaseStorage
 import CoreImage.CIFilterBuiltins
 import MLKitBarcodeScanning
@@ -44,6 +45,9 @@ struct NewDonationView: View {
     @State private var showingCameraScanner = false
     @State private var showingImagePickerDonation = false
     @State private var showToast = false
+    @State private var qrInvalid = false
+    @State private var presentingProgressToast = false
+    @State private var presentingSuccessToast = false
     //@State private var showingScanner = false
     @State var type: UIImagePickerController.SourceType = .camera
     @State var data: Data = .init(count: 0)
@@ -52,132 +56,227 @@ struct NewDonationView: View {
     @State private var inputImage2: UIImage?
     @State private var image: Image?
     @State private var imageDonation: Image?
-    @State private var finishedDefiningUser = false
-    @State private var typeUser = "Student"
+    @ObservedObject var donationsData: DonationViewModel
     let barcodeOptions = BarcodeScannerOptions(formats: BarcodeFormat.qrCode)
     @State private var function: (() -> Void)?
     
     var body: some View {
-        VStack {
-            if finishedDefiningUser {
-                if typeUser == "Administrator" {
+        ZStack {
+            Color("CaritasColorSecundario").edgesIgnoringSafeArea(.all)
+            VStack {
+                if donationsData.currentUser.userType == "Administrator" {
                     administratorSection
                 }
                 else {
-                    if imageDonation != nil {
-                        imageDonation?
-                            .resizable()
-                            .scaledToFit()
-                    }
-                    if title != "" {
-                        Text(title)
-                    }
-                    if qrId != "" {
-                        Text(qrId)
-                    }
-                    if points != "" {
-                        Text(points)
-                    }
+                    Text("Es necesario que escanees el código QR del administrador, por favor elige si lo harás con tu cámara o seleccionarás una foto de tu librería:")
+                        .frame(width:300, height: 200, alignment: .center)
+                        .padding(.top, 20)
+                        .padding(.bottom, 30)
+                        .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
                     HStack {
                         Button(action: {
                             function = readQrCode
                             //self.showingImagePicker = true
                             self.showingView = .first
                         }) {
-                            Text("From Library")
+                            HStack {
+                                Image("Library")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                Text("From Library")
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(8)
+                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                            }
+                            .frame(width: 200, height: 50)
+                            .background(Color("CaritasColorPrincipal"))
                         }
                         Button(action: {
                             function = readQrCode
                             //self.showingCameraScanner = true
                             self.showingView = .second
                         }) {
-                            Text("From Camera")
-                        }
-                        Button(action: {
-                            idTest = DonationViewModel.shared.db.collection("Donations").document().documentID
-                            print(idTest)
-                        }) {
-                            Text("Generate ID")
-                        }
-                    }
-                    HStack {
-                        Button(action: {
-                            type = .photoLibrary
-                            function = loadImage
-                            //self.showingImagePickerDonation = true
-                            self.showingView = .third
-                        }) {
-                            Text("Front Picture (Library)")
-                        }
-                        Button(action: {
-                            type = .camera
-                            function = loadImage
-                           // self.showingImagePickerDonation = true
-                            self.showingView = .third
-                        }) {
-                            Text("Front Picture (Camera)")
+                            HStack {
+                                Image("Camera")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                Text("From Camera")
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(8)
+                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                            }
+                            .frame(width: 200, height: 50)
+                            .background(Color("CaritasColorPrincipal"))
                         }
                     }
-                    if title != "" && qrId != "" && points != "" && description != "" && imageDonation != nil {
-                        Button(action: {
-                            uploadDonation(id: qrId, points: Int(points)!, title: title, description: description)
-                        }) {
-                            Text("Add new donation")
+                    .padding(.bottom, 20)
+                    if qrId != "" && points != "" && title != "" && description != "" {
+                        Divider()
+                        Text("Es necesario que elegir una foto para acompañar a tu donación")
+                            .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                            .padding(.bottom, 20)
+                        HStack {
+                            Button(action: {
+                                type = .photoLibrary
+                                function = loadImage
+                                //self.showingImagePickerDonation = true
+                                self.showingView = .third
+                            }) {
+                                HStack {
+                                    Image("Library")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                    Text("From Library")
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(8)
+                                        .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                                }
+                                .frame(width: 200, height: 50)
+                                .background(Color("CaritasColorPrincipal"))
+                            }
+                            Button(action: {
+                                type = .camera
+                                function = loadImage
+                               // self.showingImagePickerDonation = true
+                                self.showingView = .third
+                            }) {
+                                HStack {
+                                    Image("Camera")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                    Text("From Camera")
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(8)
+                                        .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                                }
+                                .frame(width: 200, height: 50)
+                                .background(Color("CaritasColorPrincipal"))
+                            }
                         }
                     }
+                    Form {
+//                        Section {
+//                            if imageDonation != nil {
+//                                imageDonation?
+//                                    .resizable()
+//                                    .scaledToFit()
+//                            }
+//                            if title != "" {
+//                                Text(title)
+//                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+//                            }
+//                            if qrId != "" {
+//                                Text(qrId)
+//                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+//                            }
+//                            if points != "" {
+//                                Text(points)
+//                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+//                            }
+//                        }
+                        Section {
+                            Button(action: {
+                                uploadDonation(id: qrId, points: Int(points)!, title: title, description: description)
+                            }) {
+                                Text("Add new donation")
+                                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
+                            }
+                        }
+                        .disabled(disableForm)
+                    }
+    //                if title != "" && qrId != "" && points != "" && description != "" && imageDonation != nil {
+    //                    Button(action: {
+    //                        uploadDonation(id: qrId, points: Int(points)!, title: title, description: description)
+    //                    }) {
+    //                        Text("Add new donation")
+    //                    }
+    //                }
+                    
+                    .background(Color("CaritasColorSecundario"))
                 }
             }
-        }
-        .onAppear {
-            getUserType { result in
-                print(result)
-                typeUser = result
-                finishedDefiningUser = true
+            .navigationBarTitle("Nueva Donación")
+            .sheet(item: $showingView, onDismiss: function) { item in
+                switch item {
+                case .first:
+                    ImagePicker(sourceType: .photoLibrary, image: self.$inputImage)
+                case .second:
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "sdflkajsñdfljdhz\n70", completion: self.handleScan)
+                case .third:
+                    ImagePicker(sourceType: type, image: self.$inputImage2)
+                }
             }
-        }
-        .navigationBarTitle("Nueva Donación")
-        .sheet(item: $showingView, onDismiss: function) { item in
-            switch item {
-            case .first:
-                ImagePicker(sourceType: .photoLibrary, image: self.$inputImage)
-            case .second:
-                CodeScannerView(codeTypes: [.qr], simulatedData: "sdflkajsñdfljdhz\n70", completion: self.handleScan)
-            case .third:
-                ImagePicker(sourceType: type, image: self.$inputImage2)
+            .toast(isPresented: $showToast, dismissAfter: 2.0) {
+                ToastView("Donation already registered")
+                    .toastViewStyle(WarningToastViewStyle())
             }
-        }
-        .toast(isPresented: $showToast, dismissAfter: 2.0) {
-            ToastView("Donation already registered")
+            .toast(isPresented: $qrInvalid, dismissAfter: 2.0) {
+                ToastView("Invalid QR")
+                    .toastViewStyle(WarningToastViewStyle())
+            }
+            .toast(isPresented: $presentingProgressToast) {
+                presentingSuccessToast = true
+            } content: {
+                ToastView("Checking...")
+                    .toastViewStyle(IndefiniteProgressToastViewStyle())
+            }
+            .toast(isPresented: $presentingSuccessToast, dismissAfter: 2.0) {
+                ToastView("Success!")
+                    .toastViewStyle(SuccessToastViewStyle())
+            }
         }
     }
     
+    var disableForm: Bool {
+        title == "" || qrId == "" || points == "" || description == "" || imageDonation == nil
+    }
+    
+    var disableForm2: Bool {
+        titleToGive == "" || pointsToGive == "" || descriptionToGive == ""
+    }
+    
     private var administratorSection: some View {
-        Section() {
-            TextField("Donation Title", text: $titleToGive)
-                .font(.title)
-            TextField("Description", text: $descriptionToGive)
-                .font(.body)
-            Picker("Points", selection: $pointsToGive) {
-                ForEach(possiblePoints, id: \.self) {
-                    Text($0)
+        VStack {
+            Form {
+                Section(header: Text("Datos de la Donación")) {
+                    TextField("Donation Title", text: $titleToGive)
+                        .font(.body)
+                    TextField("Description", text: $descriptionToGive)
+                        .font(.body)
+                    Picker("Points", selection: $pointsToGive) {
+                        ForEach(possiblePoints, id: \.self) {
+                            Text($0)
+                        }
+                    }
                 }
+                Section {
+                    Button(action: {
+                        idTest = DonationViewModel.shared.db.collection("Donations").document().documentID
+                        qrText = "\(idTest)\n\(pointsToGive)\n\(titleToGive)\n\(descriptionToGive)"
+                        showQR = true
+                    }) {
+                        Text("Generate QR")
+                    }
+                }
+                .disabled(disableForm2)
             }
             if showQR {
                 Image(uiImage: generateQRCode(from: qrText))
                         .interpolation(.none)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200, height: 200)
+                    .frame(width: 250, height: 250, alignment: .center)
+                Spacer()
             }
-            if titleToGive != "" && pointsToGive != "" && descriptionToGive != "" {
-                Button(action: {
-                    idTest = DonationViewModel.shared.db.collection("Donations").document().documentID
-                    qrText = "\(idTest)\n\(pointsToGive)\n\(titleToGive)\n\(descriptionToGive)"
-                    showQR = true
-                }) {
-                    Text("Generate QR")
-                }
-            }
+    //                if titleToGive != "" && pointsToGive != "" && descriptionToGive != "" {
+    //                    Button(action: {
+    //                        idTest = DonationViewModel.shared.db.collection("Donations").document().documentID
+    //                        qrText = "\(idTest)\n\(pointsToGive)\n\(titleToGive)\n\(descriptionToGive)"
+    //                        showQR = true
+    //                    }) {
+    //                        Text("Generate QR")
+    //                    }
+    //                }
         }
     }
     
@@ -185,13 +284,17 @@ struct NewDonationView: View {
         switch result {
         case .success(let code):
             let newDonation = code.components(separatedBy: "\n")
-            guard newDonation.count == 4 else { return }
+            guard newDonation.count == 4 else {
+                qrInvalid = true
+                return
+            }
             
             qrId = newDonation[0]
             points = newDonation[1]
             title = newDonation[2]
             description = newDonation[3]
         case .failure(let error):
+            qrInvalid = true
             print("Scanning failed:")
             print(error)
         }
@@ -223,6 +326,7 @@ struct NewDonationView: View {
                 print(newDonation)
                 guard newDonation.count == 4 else {
                     print(newDonation.count)
+                    qrInvalid = true
                     return
                 }
                 qrId = newDonation[0]
@@ -238,15 +342,21 @@ struct NewDonationView: View {
         documentExists(collection: "Donations", id: id) { (exists) in
             switch exists {
             case false:
+                presentingProgressToast = true
                 var pictureURL = "https://firebasestorage.googleapis.com/v0/b/bancodealimentos-9473b.appspot.com/o/img_alimento-energia-hd-1024x675.jpg?alt=media&token=3b3c0d94-40ae-47bc-b898-ec62dcb8c69c"
                 uploadPicture() { (url) in
                     pictureURL = url
                     let donation = DonationModel(id: id, title: title, picture: pictureURL, date: Date(), points: points, user: APIService.shared.auth.currentUser?.uid ?? "", description: description)
                     do {
                         try DonationViewModel.shared.db.collection("Donations").document(id).setData(from: donation)
+                            presentingProgressToast = false
                     } catch let error {
                         print("Error writing donation to Firestore: \(error)")
                     }
+                    let userRef = DonationViewModel.shared.db.collection("Users").document(APIService.shared.auth.currentUser?.uid ?? "")
+                    userRef.updateData([
+                        "diamonds": FieldValue.increment(Int64(points))
+                    ])
                 }
             case true:
                 showToast = true
@@ -345,6 +455,6 @@ struct NewDonationView: View {
 
 struct NewDonationView_Previews: PreviewProvider {
     static var previews: some View {
-        NewDonationView()
+        NewDonationView(donationsData: DonationViewModel())
     }
 }

@@ -23,10 +23,11 @@ struct DonationRow: View {
             HStack {
                 Text(donation.title)
                     .fontWeight(.bold)
-                    .foregroundColor(.black)
+                    .foregroundColor(.black) .font(.custom("TT Commons Bold.otf", size: 15))
                 Spacer(minLength: 0)
                 Menu(content: {
                     Text("Edit")
+                        .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
                     
                 }, label: {
                     Image(systemName: "ellipsis")
@@ -45,14 +46,18 @@ struct DonationRow: View {
                 Text("Puntos: \(donation.points)")
                     .fontWeight(.bold)
                     .foregroundColor(.black)
+                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
                 Spacer(minLength: 0)
                 Text("Fecha de donación: \(dateFormat.string(from: donation.date))")
+                    .font(.custom("NeueHaasUnicaPro-Black.tff", size: 15))
                 Spacer(minLength: 0)
             }
             Spacer()
         }
         .padding(10)
-        .background(Color.orange.opacity(0.2))
+        .padding(.top, 20)
+        .frame(width: UIScreen.main.bounds.width - 20, height: 300)
+        .background(Color("CaritasNaranja").opacity(0.2))
         .cornerRadius(15)
     }
 }

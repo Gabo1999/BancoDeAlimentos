@@ -49,7 +49,7 @@ class APIService {
         }
     }
     
-    func signUp(credentials: Credentials, completion: @escaping (Result<Bool, Authentication.SignUpError>) -> Void) {
+    func signUp(credentials: Credentials, completion: @escaping (Result<(Bool,Bool), Authentication.SignUpError>) -> Void) {
         auth.createUser(withEmail: credentials.email, password: credentials.password) { [self] result, error in
             guard result != nil, error == nil else {
                 DispatchQueue.main.async {
@@ -60,11 +60,17 @@ class APIService {
             }
             
             createUserDocument(id: result!.user.uid) { result in
-                DispatchQueue.main.async {
-                    completion(.success(true))
-                }
+                if result {
+                    DispatchQueue.main.async {
+                        completion(.success((true, result)))
+                    }
 
-                print("Success")
+                    print("Document just created")
+                } else {
+                    DispatchQueue.main.async {
+                        completion(.success((true, result)))
+                    }
+                }
             }
         }
     }
@@ -74,13 +80,13 @@ class APIService {
         completion(.success(true))
     }
     
-    func facebookLogIn(completion: @escaping (Result<Bool, Authentication.AuthenticationError>) -> Void){
+    func facebookLogIn(completion: @escaping (Result<(Bool,Bool), Authentication.AuthenticationError>) -> Void){
         
         manager.logIn(permissions: [], from: nil) { (result, err) in
             if err != nil {
                 print(err!.localizedDescription)
                 DispatchQueue.main.async {
-                    completion(.success(false))
+                    completion(.failure(.invalidCredentials))
                 }
                 return
             }
@@ -91,15 +97,24 @@ class APIService {
                     self.auth.signIn(with: credential) { [self] (res, err) in
                         if err != nil {
                             print((err?.localizedDescription)!)
+                            DispatchQueue.main.async {
+                                completion(.failure(.invalidCredentials))
+                            }
                             return
                         }
                         
                         createUserDocument(id: res!.user.uid) { result in
-                            DispatchQueue.main.async {
-                                completion(.success(true))
-                            }
+                            if result {
+                                DispatchQueue.main.async {
+                                    completion(.success((true, result)))
+                                }
 
-                            print("Success")
+                                print("Document just created")
+                            } else {
+                                DispatchQueue.main.async {
+                                    completion(.success((true, result)))
+                                }
+                            }
                         }
                     }
                 }
@@ -107,7 +122,7 @@ class APIService {
         }
     }
     
-    func googleSignIn(completion: @escaping (Result<Bool, Authentication.AuthenticationError>) -> Void) {
+    func googleSignIn(completion: @escaping (Result<(Bool,Bool), Authentication.AuthenticationError>) -> Void) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
         let config = GIDConfiguration(clientID: clientID)
@@ -154,11 +169,17 @@ class APIService {
                 }
                 
                 createUserDocument(id: result!.user.uid) { result in
-                    DispatchQueue.main.async {
-                        completion(.success(true))
-                    }
+                    if result {
+                        DispatchQueue.main.async {
+                            completion(.success((true, result)))
+                        }
 
-                    print("Success")
+                        print("Document just created")
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(.success((true, result)))
+                        }
+                    }
                 }
             }
         }
@@ -167,20 +188,32 @@ class APIService {
     func createUserDocument(id: String, completion: @escaping (Bool) -> Void) {
         documentExists(collection: "Users", id: id) { result in
             if result {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
                 print("Success")
             } else {
                 DonationViewModel.shared.db.collection("Users").document(id).setData([
-                    "donationPoints": 0,
-                    "highestGameScore": 0,
+                    "diamonds": 0,
+                    "energy": 0,
+                    "lastLogin": "00/00/00",
+                    "magicPowerLvl": 1,
+                    "powerLvl": 1,
+                    "score": 0,
+                    "timerLvl": 1,
+                    "userName": "Anonimus",
                     "userType": "Student"
                 ]) { err in
                     if let err = err {
                         print("Error writing new User document: \(err)")
-                        completion(false)
+                        DispatchQueue.main.async {
+                            completion(false)
+                        }
                     } else {
                         print("User's document successfully written!")
-                        completion(true)
+                        DispatchQueue.main.async {
+                            completion(true)
+                        }
                     }
                 }
             }
@@ -191,9 +224,13 @@ class APIService {
         let docRef = DonationViewModel.shared.db.collection(collection).document(id)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
             } else {
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         }
     }

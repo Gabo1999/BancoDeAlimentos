@@ -9,6 +9,7 @@ import SwiftUI
 
 class Authentication: ObservableObject {
     @Published var isValidated = false
+    @Published var firstSignIn = false
     static let shared = Authentication()
     
     var isSignedIn: Bool {
@@ -17,7 +18,7 @@ class Authentication: ObservableObject {
     
     func isSignedInValidated() -> Bool {
         if isSignedIn && !isValidated {
-            updateValidation(success: isSignedIn)
+            updateValidation(success: isSignedIn, firstTime: firstSignIn)
         }
         return isValidated && isSignedIn
     }
@@ -52,9 +53,11 @@ class Authentication: ObservableObject {
         }
     }
     
-    func updateValidation(success: Bool) {
+    func updateValidation(success: Bool, firstTime: Bool) {
         withAnimation {
+            print("Updating Validation: isValid: \(success); firstSignIn: \(firstTime)")
             isValidated = success
+            firstSignIn = firstTime
         }
     }
 }
