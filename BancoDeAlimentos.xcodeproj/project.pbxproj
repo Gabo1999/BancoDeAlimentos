@@ -57,6 +57,7 @@
 		874146D9275841FA0092153A /* TT Commons Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146D3275841F90092153A /* TT Commons Medium.otf */; };
 		874146DE2758463A0092153A /* TT Commons ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 874146DD2758463A0092153A /* TT Commons ExtraBold.otf */; };
 		8793C9E42733A4E8005B6A64 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793C9E32733A4E8005B6A64 /* ImagePicker.swift */; };
+		87AB7E422758914600D7F41B /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 87AB7E412758914600D7F41B /* FocusEntity */; };
 		87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BF72720F6F900752510 /* FacebookLogin */; };
 		87B14C00272102C900752510 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14BFF272102C900752510 /* FacebookAEM */; };
 		87B14C032721030000752510 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87B14C022721030000752510 /* FacebookCore */; };
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AB7E422758914600D7F41B /* FocusEntity in Frameworks */,
 				87B14C00272102C900752510 /* FacebookAEM in Frameworks */,
 				87B14BF82720F6F900752510 /* FacebookLogin in Frameworks */,
 				87B14C032721030000752510 /* FacebookCore in Frameworks */,
@@ -313,6 +315,7 @@
 				87134DBE2734F786007FC123 /* CodeScanner */,
 				873FAB082739941D003627D8 /* ToastUI */,
 				873FAB0B2739AAFC003627D8 /* FirebaseStorage */,
+				87AB7E412758914600D7F41B /* FocusEntity */,
 			);
 			productName = BancoDeAlimentos;
 			productReference = 870E671D2719061C0052C01E /* BancoDeAlimentos.app */;
@@ -349,6 +352,7 @@
 				873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				87134DBD2734F785007FC123 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				873FAB072739941D003627D8 /* XCRemoteSwiftPackageReference "ToastUI" */,
+				87AB7E402758914600D7F41B /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 870E671E2719061C0052C01E /* Products */;
 			projectDirPath = "";
@@ -701,6 +705,14 @@
 				minimumVersion = 7.1.1;
 			};
 		};
+		87AB7E402758914600D7F41B /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.4;
+			};
+		};
 		87B14BF62720F6F900752510 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -756,6 +768,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 873FD47D2721DEAA001EBEA5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		87AB7E412758914600D7F41B /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87AB7E402758914600D7F41B /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
 		};
 		87B14BF72720F6F900752510 /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
